@@ -1,0 +1,272 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11547,        264]
+NotebookOptionsPosition[      9816,        227]
+NotebookOutlinePosition[     10211,        243]
+CellTagsIndexPosition[     10168,        240]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Bulk energy calculations", "Section",
+ CellChangeTimes->{{3.920009683354698*^9, 
+  3.92000968695218*^9}},ExpressionUUID->"918e9a0e-73ee-4b15-ac1e-\
+ad3eee888cd2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Around", "[", 
+  RowBox[{"7.50114", ",", 
+   RowBox[{"0.2", " ", "7.50114"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9200017299672613`*^9, 3.920001735475319*^9}, {
+   3.9200018137520657`*^9, 3.920001859563058*^9}, {3.920008233204515*^9, 
+   3.920008235405142*^9}, 3.920008546792963*^9},
+ CellLabel->"In[10]:=",ExpressionUUID->"a86c9bb6-89f9-4525-8343-2ed167b9a416"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TemplateBox[{"7.5", "1.5"},
+   "Around"],
+  Around[7.50114, 1.5002280000000001`]]], "Output",
+ CellChangeTimes->{3.9200082632730494`*^9, 3.92000854873759*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"5eecb672-4110-46e5-8ffc-42d95c58807c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ecutVals", " ", "=", 
+  RowBox[{"SetPrecision", "[", 
+   RowBox[{
+    RowBox[{"Range", "[", 
+     RowBox[{"20", ",", " ", "40", ",", " ", "5"}], "]"}], ",", "3"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"aVals", "=", " ", 
+  RowBox[{"SetPrecision", "[", 
+   RowBox[{
+    RowBox[{"Subdivide", "[", 
+     RowBox[{
+      RowBox[{"7.5", "-", "1.5"}], ",", 
+      RowBox[{"7.5", "+", "1.5"}], ",", "20"}], "]"}], ",", "3"}], 
+   "]"}]}]}], "Input",
+ CellChangeTimes->{{3.920008427223534*^9, 3.920008481400573*^9}, {
+   3.920008512003778*^9, 3.92000853177348*^9}, {3.9200085774682293`*^9, 
+   3.920008587840274*^9}, {3.920008625138255*^9, 3.920008632013639*^9}, {
+   3.9200090933491507`*^9, 3.920009102941659*^9}, {3.920009148433069*^9, 
+   3.9200092010111628`*^9}, {3.920009285892193*^9, 3.920009383741132*^9}, 
+   3.920009449318922*^9},
+ CellLabel->"In[47]:=",ExpressionUUID->"993c2265-b52c-49da-af26-07f9e3799b50"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "20.`3.", ",", "25.`3.", ",", "30.`3.", ",", "35.`3.", ",", "40.`3."}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.9200086389182796`*^9, 3.920009106690998*^9, {3.92000915084569*^9, 
+   3.920009158943804*^9}, 3.9200092058123703`*^9, {3.920009291458926*^9, 
+   3.920009385565839*^9}, 3.920009451978066*^9},
+ CellLabel->"Out[47]=",ExpressionUUID->"4d5201aa-682b-4f42-adaf-eed43b1054c4"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "6.`3.", ",", "6.1499999999999994671`3.", ",", "6.3000000000000007105`3.", 
+   ",", "6.4499999999999992895`3.", ",", "6.6000000000000005329`3.", ",", 
+   "6.75`3.", ",", "6.8999999999999994671`3.", ",", 
+   "7.0499999999999998224`3.", ",", "7.1999999999999992895`3.", ",", 
+   "7.3499999999999996447`3.", ",", "7.5`3.", ",", "7.6500000000000003553`3.",
+    ",", "7.7999999999999998224`3.", ",", "7.9500000000000001776`3.", ",", 
+   "8.0999999999999996447`3.", ",", "8.25`3.", ",", 
+   "8.4000000000000003553`3.", ",", "8.5500000000000007105`3.", ",", 
+   "8.6999999999999992895`3.", ",", "8.8499999999999996447`3.", ",", 
+   "9.`3."}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.9200086389182796`*^9, 3.920009106690998*^9, {3.92000915084569*^9, 
+   3.920009158943804*^9}, 3.9200092058123703`*^9, {3.920009291458926*^9, 
+   3.920009385565839*^9}, 3.920009451978898*^9},
+ CellLabel->"Out[48]=",ExpressionUUID->"5706a8e6-c9b1-4b4e-95e2-1abdb923ce40"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"inputFiles", " ", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"StringForm", "[", 
+      RowBox[{
+      "\"\<&CONTROL\n    calculation = 'scf'\n    restart_mode = \
+'from_scratch'\n    pseudo_dir = '/home/software/materia/pseudo'\n    outdir \
+= 'WORK'\n    max_seconds = 2400\n/\n\n&SYSTEM\n    ibrav = 2\n    celldm(1) \
+= `2`\n    nat = 1\n    ntyp = 1\n    ecutwfc = `1`\n    ecutrho = 240.0\n    \
+occupations = 'smearing'\n    smearing = 'gaussian'\n    degauss = 0.02\n    \
+nspin = 2\n    starting_magnetization(1) = 0.01\n/\n\n&ELECTRONS\n    \
+diagonalization = 'david'\n    electron_maxstep = 200\n    mixing_mode = \
+'plain'\n    mixing_beta = 0.6\n    conv_thr = 1.0d-8\n/\n\nATOMIC_SPECIES\n\
+Ni      58.69  Ni.pbe-n-rrkjus_psl.0.1.UPF\n\nATOMIC_POSITIONS alat\nNi       \
+     0.0000000000       0.0000000000       0.0000000000 \n\nK_POINTS \
+automatic\n16 16 16   1 1 1\n\>\"", ",", 
+       RowBox[{"ToString", "[", " ", "ecut", "]"}], ",", 
+       RowBox[{"ToString", "[", "a", "]"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"ecut", ",", " ", "ecutVals"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"a", ",", " ", "aVals"}], "}"}]}], "]"}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"inputFiles", "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "[", 
+  RowBox[{"[", "2", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.9200087702939177`*^9, 3.920008773705017*^9}, {
+  3.920008805607628*^9, 3.920008878718074*^9}, {3.920008910007568*^9, 
+  3.9200090436624117`*^9}, {3.920009466729292*^9, 3.9200095252260447`*^9}, {
+  3.920009562573101*^9, 3.920009562614957*^9}},
+ CellLabel->"In[55]:=",ExpressionUUID->"65c9feac-4ba6-41f3-b829-8ebd330cff5f"],
+
+Cell[BoxData[
+ InterpretationBox["\<\"&CONTROL\\n    calculation = 'scf'\\n    restart_mode \
+= 'from_scratch'\\n    pseudo_dir = '/home/software/materia/pseudo'\\n    \
+outdir = 'WORK'\\n    max_seconds = 2400\\n/\\n\\n&SYSTEM\\n    ibrav = 2\\n  \
+  celldm(1) = 6.15\\n    nat = 1\\n    ntyp = 1\\n    ecutwfc = 20.0\\n    \
+ecutrho = 240.0\\n    occupations = 'smearing'\\n    smearing = 'gaussian'\\n \
+   degauss = 0.02\\n    nspin = 2\\n    starting_magnetization(1) = \
+0.01\\n/\\n\\n&ELECTRONS\\n    diagonalization = 'david'\\n    \
+electron_maxstep = 200\\n    mixing_mode = 'plain'\\n    mixing_beta = 0.6\\n \
+   conv_thr = 1.0d-8\\n/\\n\\nATOMIC_SPECIES\\nNi      58.69  \
+Ni.pbe-n-rrkjus_psl.0.1.UPF\\n\\nATOMIC_POSITIONS alat\\nNi            \
+0.0000000000       0.0000000000       0.0000000000 \\n\\nK_POINTS \
+automatic\\n16 16 16   1 1 1\\n\"\>",
+  StringForm[
+  "&CONTROL\n    calculation = 'scf'\n    restart_mode = 'from_scratch'\n    \
+pseudo_dir = '/home/software/materia/pseudo'\n    outdir = 'WORK'\n    \
+max_seconds = 2400\n/\n\n&SYSTEM\n    ibrav = 2\n    celldm(1) = `2`\n    nat \
+= 1\n    ntyp = 1\n    ecutwfc = `1`\n    ecutrho = 240.0\n    occupations = \
+'smearing'\n    smearing = 'gaussian'\n    degauss = 0.02\n    nspin = 2\n    \
+starting_magnetization(1) = 0.01\n/\n\n&ELECTRONS\n    diagonalization = \
+'david'\n    electron_maxstep = 200\n    mixing_mode = 'plain'\n    \
+mixing_beta = 0.6\n    conv_thr = 1.0d-8\n/\n\nATOMIC_SPECIES\nNi      58.69  \
+Ni.pbe-n-rrkjus_psl.0.1.UPF\n\nATOMIC_POSITIONS alat\nNi            \
+0.0000000000       0.0000000000       0.0000000000 \n\nK_POINTS automatic\n16 \
+16 16   1 1 1\n", "20.0", "6.15"],
+  Editable->False]], "Output",
+ CellChangeTimes->{
+  3.9200090480798817`*^9, 3.920009110778125*^9, 3.9200091671152267`*^9, 
+   3.920009209620451*^9, {3.920009364909635*^9, 3.9200093908589563`*^9}, {
+   3.920009488503344*^9, 3.920009526809806*^9}, 3.920009566424684*^9},
+ CellLabel->"Out[56]=",ExpressionUUID->"4235498a-ed92-44fd-997d-567ec5079983"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["k-points mesh", "Section",
+ CellChangeTimes->{{3.920008384740115*^9, 
+  3.920008394998353*^9}},ExpressionUUID->"08e63518-8274-4334-a509-\
+a70719c2d885"],
+
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{
+   RowBox[{"kRange", " ", "=", 
+    RowBox[{"Range", "[", 
+     RowBox[{"1", ",", "16", ",", "4"}], "]"}]}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.920001521811699*^9, 3.920001531681254*^9}, {
+  3.9200081120412292`*^9, 3.920008116776586*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"bafd609c-81b3-4b06-9716-4e4d6d532a89"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"inputs", " ", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"StringForm", "[", 
+      RowBox[{
+      "\"\<&CONTROL\n    calculation = 'scf'\n    restart_mode = \
+'from_scratch'\n    pseudo_dir = '/home/software/materia/pseudo'\n    outdir \
+= 'WORK'\n    max_seconds = 2400\n/\n\n&SYSTEM\n    ibrav = 2\n    celldm(1) \
+= 6.2\n    nat = 1\n    ntyp = 1\n    ecutwfc = 30.0\n    ecutrho = 240.0\n   \
+ occupations = 'smearing'\n    smearing = 'gaussian'\n    degauss = 0.02\n    \
+nspin = 2\n    starting_magnetization(1) = 0.01\n/\n\n&ELECTRONS\n    \
+diagonalization = 'david'\n    electron_maxstep = 200\n    mixing_mode = \
+'plain'\n    mixing_beta = 0.6\n    conv_thr = 1.0d-8\n/\n\nATOMIC_SPECIES\n\
+Ni      58.69  Ni.pbe-n-rrkjus_psl.0.1.UPF\n\nATOMIC_POSITIONS alat\nNi       \
+     0.0000000000       0.0000000000       0.0000000000 \n\nK_POINTS \
+automatic\n`1` `1` `1`   1 1 1\n\>\"", ",", "#"}], "]"}], "&"}], "/@", 
+    "kRange"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.920001550693462*^9, 3.920001619023581*^9}, {
+  3.92000808596756*^9, 3.920008102730995*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"7e79c3e7-17f2-4e6a-b07f-49722f1fc670"],
+
+Cell[BoxData[""], "Input",ExpressionUUID->"ccf88596-7089-4b58-9a9c-161041fbc8e6"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.9200080398449297`*^9, 
+  3.920008042498596*^9}},ExpressionUUID->"01a20a4c-f7fb-4cd5-a7b2-\
+6af920adf819"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.920001845820356*^9, 
+  3.92000184806597*^9}},ExpressionUUID->"ac13ba4b-ab55-443d-9b2e-\
+18beb1829ef1"]
+}, Open  ]]
+},
+WindowSize->{808, 702},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"14.0 for Mac OS X ARM (64-bit) (December 12, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"caad35d4-895c-4573-bbb2-490dbbc48d9c"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 168, 3, 67, "Section",ExpressionUUID->"918e9a0e-73ee-4b15-ac1e-ad3eee888cd2"],
+Cell[CellGroupData[{
+Cell[773, 29, 391, 7, 30, "Input",ExpressionUUID->"a86c9bb6-89f9-4525-8343-2ed167b9a416"],
+Cell[1167, 38, 273, 6, 34, "Output",ExpressionUUID->"5eecb672-4110-46e5-8ffc-42d95c58807c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1477, 49, 943, 21, 52, "Input",ExpressionUUID->"993c2265-b52c-49da-af26-07f9e3799b50"],
+Cell[2423, 72, 427, 9, 34, "Output",ExpressionUUID->"4d5201aa-682b-4f42-adaf-eed43b1054c4"],
+Cell[2853, 83, 988, 17, 56, "Output",ExpressionUUID->"5706a8e6-c9b1-4b4e-95e2-1abdb923ce40"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3878, 105, 1734, 33, 850, "Input",ExpressionUUID->"65c9feac-4ba6-41f3-b829-8ebd330cff5f"],
+Cell[5615, 140, 2028, 30, 856, "Output",ExpressionUUID->"4235498a-ed92-44fd-997d-567ec5079983"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7692, 176, 158, 3, 67, "Section",ExpressionUUID->"08e63518-8274-4334-a509-a70719c2d885"],
+Cell[7853, 181, 362, 8, 30, "Input",ExpressionUUID->"bafd609c-81b3-4b06-9716-4e4d6d532a89"],
+Cell[8218, 191, 1187, 21, 829, "Input",ExpressionUUID->"7e79c3e7-17f2-4e6a-b07f-49722f1fc670"],
+Cell[9408, 214, 81, 0, 30, "Input",ExpressionUUID->"ccf88596-7089-4b58-9a9c-161041fbc8e6"],
+Cell[9492, 216, 154, 3, 30, "Input",ExpressionUUID->"01a20a4c-f7fb-4cd5-a7b2-6af920adf819"],
+Cell[9649, 221, 151, 3, 30, "Input",ExpressionUUID->"ac13ba4b-ab55-443d-9b2e-18beb1829ef1"]
+}, Open  ]]
+}
+]
+*)
+
